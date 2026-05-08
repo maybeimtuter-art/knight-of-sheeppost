@@ -1,3 +1,6 @@
+
+
+
 if(obj_room_manager.fader <= 0){
 	
 	if(keyboard_check(vk_up)){
@@ -25,3 +28,25 @@ if(obj_room_manager.fader <= 0){
 		image_speed = 1;
 	}
 }
+
+
+
+
+var _use = keyboard_check_pressed(ord("F"))
+
+
+if _use and use_cooldown <= 0{
+	var n = instance_nearest(x,y,obj_entity_par)
+	if n and distance_to_object(n) < 5{
+		n.use()
+		if(n.use ){
+			use_cooldown = 60
+			
+		}
+		}
+	
+	}
+use_cooldown -= 1
+	
+
+
